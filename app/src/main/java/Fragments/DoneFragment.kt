@@ -7,34 +7,32 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.todokotlin.R
-import com.example.todokotlin.databinding.FragmentMenuBinding
+import com.example.todokotlin.databinding.FragmentDoneBinding
 
 
-class MenuFragment : Fragment() {
+class DoneFragment : Fragment() {
 
-    private lateinit var binding: FragmentMenuBinding
+    private lateinit var binding: FragmentDoneBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding=FragmentMenuBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
+        binding=FragmentDoneBinding.inflate(inflater, container, false)
+        return binding.root
+        // Inflate the layout for this fragment
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply{
-            btnTodo.setOnClickListener{
-                val direction = MenuFragmentDirections.actionMenuFragmentToTodoFragment()
-                findNavController().navigate(direction)
-            }
-            btnDone.setOnClickListener{
-                val direction = MenuFragmentDirections.actionMenuFragmentToDoneFragment()
+        binding.apply {
+            btnToMenu.setOnClickListener {
+                val direction = DoneFragmentDirections.actionDoneFragmentToMenuFragment()
                 findNavController().navigate(direction)
             }
         }
+
     }
 }

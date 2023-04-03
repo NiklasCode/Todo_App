@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_menuFragment_to_todoFragment"
             app:destination="@id/todoFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
     </fragment>
     <fragment
         android:id="@+id/todoFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_todo2" >
         <action
             android:id="@+id/action_todoFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="Fragments.DoneFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" >
+        <action
+            android:id="@+id/action_doneFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>
